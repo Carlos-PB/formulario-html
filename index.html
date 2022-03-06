@@ -1,43 +1,46 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Formulario</title>
     </head>
     <body>
+        <h1>Registro</h1>
+        <p>Introduzca sus datos.</p>
         <form action="" method="POST">
             <table>
                 <tr>
-                    <td><label><font color="red">*</font> Nombre:</label></td>
-                    <td><input type="text" name="nombre" maxlength="20" autocomplete="given-name" required/></td>
+                    <td><label for="name">* Nombre:</label></td>
+                    <td><input type="text" id="name" name="name" maxlength="20" autocomplete="given-name" pattern="[A-ZÑa-zñ]+" required autofocus/></td>
                 </tr>
                 <tr>
-                    <td><label><font color="red">*</font> Primer apellido:</label></td>
-                    <td><input type="text" name="apellido" maxlength="20" autocomplete="additional-name" required/></td>
+                    <td><label for="lastName">* Primer apellido:</label></td>
+                    <td><input type="text" id="lastName" name="lastName" maxlength="20" autocomplete="additional-name" pattern="[A-ZÑa-zñ]+" required/></td>
                 </tr>
                 <tr>
-                    <td><label><font color="red">*</font> Fecha de nacimiento:</label></td>
-                    <td><input type="date" name="fecha" autocomplete="bday" required/></td>
+                    <td><label for="date">* Fecha de nacimiento:</label></td>
+                    <td><input type="date" id="date" name="date" autocomplete="bday" required/></td>
                 </tr>
                 <tr>
-                    <td><label><font color="red">*</font> Email:</label></td>
-                    <td><input type="email" name="email" maxlength="30" size="30" autocomplete="email" required/></td>
+                    <td><label for="email">* Correo electrónico:</label></td>
+                    <td><input type="email" id="email" name="email" maxlength="30" size="31" autocomplete="email" required/></td>
                 </tr>
                 <tr>
-                    <td><label>Teléfono:</label></td>
-                    <td><input type="tel" name="telefono" maxlength="9" size="9" autocomplete="tel"/></td>
+                    <td><label for="phone">* Teléfono:</label></td>
+                    <td><input type="tel" id="phone" name="phone" maxlength="9" size="6" autocomplete="tel" pattern="[0123456789]{9}" placeholder="623294532" required/></td>
                 </tr>
                 <tr>
-                    <td><label><font color="red">*</font> Contraseña:</label></td>
-                    <td><input type="password" name="password" maxlength="16" title="Introduzca una contraseña de entre 8 y 16 caracteres." autocomplete="current-password" required/></td>
+                    <td><label for="password">* Contraseña (8-16 caracteres):</label></td>
+                    <td><input type="password" id="password" name="password" minlength="8" maxlength="16" size=8" title="Introduzca una contraseña de entre 8 y 16 caracteres." autocomplete="current-password" required/></td>
                 </tr>
                 <tr>
-                    <td><label>Color favorito:</label></td>
-                    <td><input type="color" name="color"/></td>
+                    <td><label for="color">* Color favorito:</label></td>
+                    <td><input type="color" id="color" name="color"></td>
                 </tr>
             </table>
-            <input type="submit"/>
+            <p>* Campo obligatorio</p>
+            <input type="submit" value="Registrarse"/>
         </form>
     </body>
 </html>
